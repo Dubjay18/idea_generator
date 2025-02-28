@@ -1,0 +1,6 @@
+{
+    "question": "[str]",
+    "quantity": "[int]",
+    "isCrazy": "[bool]",
+    "workshop_method": "[str]"
+}
