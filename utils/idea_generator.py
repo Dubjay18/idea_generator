@@ -38,7 +38,7 @@ class Generator():
                 raise ValueError("GEMINI_API_KEY not found in .env file")
             
             genai.configure(api_key=self.api_key)
-            self.model = genai.GenerativeModel('gemini-pro')
+            self.model = genai.GenerativeModel('gemini-2.0-flash')
             
         except Exception as e:
             print(f"Error connecting to Gemini API: {e}")

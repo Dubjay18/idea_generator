@@ -2,13 +2,19 @@ import os
 import json
 
 from flask import Flask, request, jsonify
-
-
+from flask_cors import CORS  #
 from utils.preprocessing import Preprocessing
 from utils.idea_generator import Generator
 
 
 app = Flask(__name__)
+CORS(app, resources={
+    r"/api/*": {
+        "origins": ["*"],  # In production, replace with specific origins
+        "methods": ["GET", "POST", "OPTIONS"],
+        "allow_headers": ["Content-Type", "Authorization"]
+    }
+})
 app.env = 'development'
 
 @app.route('/api', methods=['GET'])
